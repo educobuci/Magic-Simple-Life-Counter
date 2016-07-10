@@ -18,14 +18,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD6-Nc-k0n">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiS-8x-mex">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="110"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiS-8x-mex">
-                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBs-8z-GrX">
+                                <rect key="frame" x="0.0" y="450" width="600" height="150"/>
+                                <state key="highlighted" backgroundImage="blue_pix"/>
+                                <connections>
+                                    <action selector="decreasePlayerLife" destination="BYZ-38-t0r" eventType="touchUpInside" id="xv8-fs-2ny"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atf-HL-Fc4">
+                                <rect key="frame" x="0.0" y="300" width="600" height="150"/>
+                                <state key="highlighted" backgroundImage="blue_pix"/>
+                                <connections>
+                                    <action selector="increasePlayerLife" destination="BYZ-38-t0r" eventType="touchUpInside" id="18p-J9-m3L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3w-e2-fxa">
+                                <rect key="frame" x="0.0" y="150" width="600" height="150"/>
+                                <state key="highlighted" backgroundImage="blue_pix"/>
+                                <connections>
+                                    <action selector="increaseOpponentLife" destination="BYZ-38-t0r" eventType="touchUpInside" id="byF-KA-zAe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMj-DQ-ASc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                <state key="highlighted" backgroundImage="blue_pix"/>
+                                <connections>
+                                    <action selector="decreaseOpponentLife" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXP-bG-I3p"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD6-Nc-k0n">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="110"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,14 +62,36 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NiS-8x-mex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6AI-uL-IFd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fBs-8z-GrX" secondAttribute="bottom" id="DrZ-Q3-VEv"/>
+                            <constraint firstItem="c3w-e2-fxa" firstAttribute="bottom" secondItem="aD6-Nc-k0n" secondAttribute="bottom" id="Efz-Ho-DKb"/>
+                            <constraint firstItem="Atf-HL-Fc4" firstAttribute="height" secondItem="c3w-e2-fxa" secondAttribute="height" id="LNr-0m-8d8"/>
+                            <constraint firstItem="c3w-e2-fxa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="LYy-UO-rlf"/>
+                            <constraint firstItem="fBs-8z-GrX" firstAttribute="height" secondItem="Atf-HL-Fc4" secondAttribute="height" id="Mgq-I4-6Lx"/>
+                            <constraint firstItem="sMj-DQ-ASc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="OA0-27-lCL"/>
+                            <constraint firstItem="fBs-8z-GrX" firstAttribute="top" secondItem="Atf-HL-Fc4" secondAttribute="bottom" id="P2a-dw-M4m"/>
+                            <constraint firstItem="c3w-e2-fxa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="127" id="PT8-X6-d3O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Atf-HL-Fc4" secondAttribute="trailing" constant="-20" id="Phg-Wc-6yA"/>
+                            <constraint firstItem="sMj-DQ-ASc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="YLp-qJ-HUP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fBs-8z-GrX" secondAttribute="trailing" constant="-20" id="cSX-W0-XN5"/>
                             <constraint firstItem="NiS-8x-mex" firstAttribute="top" secondItem="aD6-Nc-k0n" secondAttribute="bottom" id="cxL-Qk-1tD"/>
                             <constraint firstItem="aD6-Nc-k0n" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="dTd-fr-Iyj"/>
+                            <constraint firstItem="c3w-e2-fxa" firstAttribute="height" secondItem="sMj-DQ-ASc" secondAttribute="height" id="f0E-io-Y8z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NiS-8x-mex" secondAttribute="bottom" id="hP8-OQ-pfF"/>
                             <constraint firstItem="aD6-Nc-k0n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="itz-YY-uVB"/>
                             <constraint firstItem="NiS-8x-mex" firstAttribute="height" secondItem="aD6-Nc-k0n" secondAttribute="height" id="jgf-Qe-cf6"/>
+                            <constraint firstItem="Atf-HL-Fc4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="lvA-h3-lfW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c3w-e2-fxa" secondAttribute="trailing" constant="-20" id="ouQ-sD-K6Q"/>
+                            <constraint firstItem="fBs-8z-GrX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="rvF-Qx-cZy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aD6-Nc-k0n" secondAttribute="trailing" constant="-20" id="uNR-mB-rRE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NiS-8x-mex" secondAttribute="trailing" constant="-20" id="wlv-BX-wHf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sMj-DQ-ASc" secondAttribute="trailing" constant="-20" id="xcy-5j-iPL"/>
+                            <constraint firstItem="Atf-HL-Fc4" firstAttribute="top" secondItem="c3w-e2-fxa" secondAttribute="bottom" id="ypF-mJ-p80"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PT8-X6-d3O"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="opponentLifeLabel" destination="aD6-Nc-k0n" id="Aux-2C-53D"/>
@@ -53,4 +103,7 @@
             <point key="canvasLocation" x="357" y="384"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blue_pix" width="1" height="1"/>
+    </resources>
 </document>
