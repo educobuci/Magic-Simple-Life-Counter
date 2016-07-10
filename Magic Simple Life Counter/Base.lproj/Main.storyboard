@@ -124,7 +124,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Life Counter" id="CCA-WG-Hbe">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="pyD-KT-0y2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="pyD-KT-0y2">
+                            <connections>
+                                <action selector="reset" destination="BYZ-38-t0r" id="SB5-UL-1b5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="opponentLifeLabel" destination="aD6-Nc-k0n" id="Aux-2C-53D"/>

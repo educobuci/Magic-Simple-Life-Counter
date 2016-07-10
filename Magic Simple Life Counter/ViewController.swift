@@ -39,5 +39,12 @@ class ViewController: UIViewController {
         playerLife -= 1
         playerLifeLabel.text = String(playerLife)
     }
+    
+    @IBAction func reset() {
+        playerLife = 20
+        playerLifeLabel.text = String(playerLife)
+        opponentLife = 20
+        opponentLifeLabel.text = String(opponentLife)
+    }
 }
 
