@@ -66,13 +66,13 @@
                                 </constraints>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoK-cH-6lz">
-                                <rect key="frame" x="382" y="367" width="37" height="42"/>
+                                <rect key="frame" x="382" y="357" width="37" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-bM-bRh">
-                                <rect key="frame" x="181" y="205" width="37" height="42"/>
+                                <rect key="frame" x="181" y="215" width="37" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                         <constraints>
                             <constraint firstItem="NiS-8x-mex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6AI-uL-IFd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fBs-8z-GrX" secondAttribute="bottom" id="DrZ-Q3-VEv"/>
-                            <constraint firstItem="HoK-cH-6lz" firstAttribute="centerY" secondItem="Atf-HL-Fc4" secondAttribute="centerY" constant="20" id="EHc-7A-d43"/>
+                            <constraint firstItem="HoK-cH-6lz" firstAttribute="centerY" secondItem="Atf-HL-Fc4" secondAttribute="centerY" constant="10" id="EHc-7A-d43"/>
                             <constraint firstItem="c3w-e2-fxa" firstAttribute="bottom" secondItem="aD6-Nc-k0n" secondAttribute="bottom" id="Efz-Ho-DKb"/>
                             <constraint firstItem="Spa-bM-bRh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-100" id="F2P-md-QXZ"/>
                             <constraint firstItem="ReU-QK-8G2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IMg-38-NLf"/>
@@ -95,7 +95,7 @@
                             <constraint firstItem="fBs-8z-GrX" firstAttribute="top" secondItem="Atf-HL-Fc4" secondAttribute="bottom" id="P2a-dw-M4m"/>
                             <constraint firstItem="c3w-e2-fxa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="127" id="PT8-X6-d3O"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Atf-HL-Fc4" secondAttribute="trailing" constant="-20" id="Phg-Wc-6yA"/>
-                            <constraint firstItem="Spa-bM-bRh" firstAttribute="centerY" secondItem="c3w-e2-fxa" secondAttribute="centerY" constant="-20" id="TO8-gZ-cc7"/>
+                            <constraint firstItem="Spa-bM-bRh" firstAttribute="centerY" secondItem="c3w-e2-fxa" secondAttribute="centerY" constant="-10" id="TO8-gZ-cc7"/>
                             <constraint firstItem="sMj-DQ-ASc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="64" id="YLp-qJ-HUP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fBs-8z-GrX" secondAttribute="trailing" constant="-20" id="cSX-W0-XN5"/>
                             <constraint firstItem="NiS-8x-mex" firstAttribute="top" secondItem="aD6-Nc-k0n" secondAttribute="bottom" id="cxL-Qk-1tD"/>
@@ -131,7 +131,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="opponentDeltaLabel" destination="Spa-bM-bRh" id="2dX-FQ-Bz1"/>
                         <outlet property="opponentLifeLabel" destination="aD6-Nc-k0n" id="Aux-2C-53D"/>
+                        <outlet property="playerDeltaLabel" destination="HoK-cH-6lz" id="Y3X-em-OVU"/>
                         <outlet property="playerLifeLabel" destination="NiS-8x-mex" id="auK-Le-5Vf"/>
                     </connections>
                 </viewController>
