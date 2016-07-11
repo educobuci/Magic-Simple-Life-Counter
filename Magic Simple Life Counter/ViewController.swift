@@ -33,31 +33,39 @@ class ViewController: UIViewController {
     }
     
     @IBAction func decreaseOpponentLife() {
-        opponentLife -= 1
-        opponentDelta -= 1
-        opponentLifeLabel.text = String(opponentLife)
-        showOpponentDelta()
+        tickOpponentLife(-1)
     }
     
     @IBAction func increaseOpponentLife() {
-        opponentLife += 1
-        opponentDelta += 1
+        tickOpponentLife(1)
+    }
+    
+    func tickOpponentLife(value: Int) {
+        opponentLife += value
+        opponentDelta += value
         opponentLifeLabel.text = String(opponentLife)
-        showOpponentDelta()
+        showDelta(&opponentDeltaTimer,
+                          deltaValue: self.opponentDelta,
+                          deltaLabel: self.opponentDeltaLabel,
+                          hideSelector: #selector(ViewController.hideOpponentDelta))
     }
     
     @IBAction func increasePlayerLife() {
-        playerLife += 1
-        playerDelta += 1
-        playerLifeLabel.text = String(playerLife)
-        showPlayerDelta()
+        tickPlayerLife(1)
     }
     
     @IBAction func decreasePlayerLife() {
-        playerLife -= 1
-        playerDelta -= 1
+        tickPlayerLife(-1)
+    }
+    
+    func tickPlayerLife(value: Int) {
+        playerLife += value
+        playerDelta += value
         playerLifeLabel.text = String(playerLife)
-        showPlayerDelta()
+        showDelta(&playerDeltaTimer,
+                  deltaValue: self.playerDelta,
+                  deltaLabel: self.playerDeltaLabel,
+                  hideSelector: #selector(ViewController.hidePlayerDelta))
     }
     
     @IBAction func reset() {
@@ -67,48 +75,33 @@ class ViewController: UIViewController {
         opponentLifeLabel.text = String(opponentLife)
     }
     
-    func showPlayerDelta () {
-        self.playerDeltaLabel.hidden = false
-        if playerDelta >= 0 {
-            self.playerDeltaLabel.text = "+\(playerDelta)"
-            self.playerDeltaLabel.textColor = UIColor.blueColor()
-        } else {
-            self.playerDeltaLabel.text = String(playerDelta)
-            self.playerDeltaLabel.textColor = UIColor.redColor()
-        }
-        self.playerDeltaTimer?.invalidate()
-        playerDeltaTimer = NSTimer.scheduledTimerWithTimeInterval(DELTA_INTERVAL_IN_SECONDS,
-                                                       target: self,
-                                                       selector: #selector(ViewController.hidePlayerDelta),
-                                                       userInfo: nil,
-                                                       repeats: false)
-    }
-    
     func hidePlayerDelta() {
         playerDelta = 0
         self.playerDeltaLabel.hidden = true
-    }
-    
-    func showOpponentDelta () {
-        self.opponentDeltaLabel.hidden = false
-        if opponentDelta >= 0 {
-            self.opponentDeltaLabel.text = "+ \(opponentDelta)"
-            self.opponentDeltaLabel.textColor = UIColor.blueColor()
-        } else {
-            self.opponentDeltaLabel.text = String(opponentDelta)
-            self.opponentDeltaLabel.textColor = UIColor.redColor()
-        }
-        self.opponentDeltaTimer?.invalidate()
-        opponentDeltaTimer = NSTimer.scheduledTimerWithTimeInterval(DELTA_INTERVAL_IN_SECONDS,
-                                                                  target: self,
-                                                                  selector: #selector(ViewController.hideOpponentDelta),
-                                                                  userInfo: nil,
-                                                                  repeats: false)
     }
     
     func hideOpponentDelta() {
         opponentDelta = 0
         self.opponentDeltaLabel.hidden = true
     }
+    
+    func showDelta (inout timer: NSTimer?, deltaValue: Int, deltaLabel: UILabel, hideSelector: Selector) {
+        deltaLabel.hidden = false
+        if deltaValue >= 0 {
+            deltaLabel.text = "+\(deltaValue)"
+            deltaLabel.textColor = UIColor.blueColor()
+        } else {
+            deltaLabel.text = String(deltaValue)
+            deltaLabel.textColor = UIColor.redColor()
+        }
+        timer?.invalidate()
+        timer = NSTimer.scheduledTimerWithTimeInterval(DELTA_INTERVAL_IN_SECONDS,
+                                                                  target: self,
+                                                                  selector: hideSelector,
+                                                                  userInfo: nil,
+                                                                  repeats: false)
+    }
+    
+    
 }
 
